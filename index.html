@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Plunk — Bar sur Rishi</title>
+  <meta name="description" content="Le Plunk, bar neutre sur Rishi. Codex, menu et personnel du bar.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/ICONE.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Le Plunk — Bar sur Rishi">
+  <meta property="og:description" content="Le Plunk, bar neutre sur Rishi.">
+  <meta property="og:url" content="https://insanity-chan.github.io/CIVILIAN/">
+  <meta property="og:image" content="https://insanity-chan.github.io/CIVILIAN/preview.png">
+  <meta property="og:site_name" content="Le Plunk">
+  <meta name="theme-color" content="#b44cff">
+</head>
+<body>
+
+  <!-- Fond optionnel : images/fond.jpg -->
+  <div class="site-fond"></div>
+
+  <div id="boot-screen">
+    <div class="boot-text">&gt; INITIALISATION DU TERMINAL...</div>
+    <div class="boot-text">&gt; CONNEXION AU RÉSEAU DE RISHI...</div>
+    <div class="boot-text">&gt; BIENVENUE AU PLUNK...</div>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+  </div>
+
+  <div class="holo-header">
+    <h1>Le Plunk</h1>
+    <div class="subtitle">Bar neutre — Rishi</div>
+  </div>
+
+  <div class="holo-frame">
+
+    <div class="holo-nav">
+      <a href="index.html"><button class="active">Accueil</button></a>
+      <a href="codex.html"><button>Codex</button></a>
+      <a href="menu.html"><button>Menu</button></a>
+      <a href="effectif.html"><button>Personnel</button></a>
+    </div>
+
+    <!-- BANNIÈRE : image de fond = images/banniere.jpg (1600x400 conseillé) -->
+    <div class="accueil-hero">
+      <div class="hero-texte">
+        <div class="hero-titre">Bienvenue au Plunk</div>
+        <p>
+          Sur Rishi, entre les plages et les stations de pirates, une porte reste ouverte à tous.
+          Contrebandiers, soldats, chasseurs de primes ou simples voyageurs : ici, tout le monde boit en paix.
+          <em>Le Plunk est neutre.</em>
+        </p>
+      </div>
+    </div>
+
+    <div class="holo-section">
+      <h2>Accueil</h2>
+      <div class="accueil-cartes">
+
+        <a href="codex.html" class="accueil-carte">
+          <span class="carte-icone"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg></span>
+          <span>
+            <div class="carte-titre">Codex</div>
+            <div class="carte-texte">Le règlement du bar.</div>
+          </span>
+        </a>
+
+        <a href="menu.html" class="accueil-carte">
+          <span class="carte-icone"><svg viewBox="0 0 24 24"><path d="M4 4h16l-8 9z M12 13v7 M8 20h8"/></svg></span>
+          <span>
+            <div class="carte-titre">Menu</div>
+            <div class="carte-texte">Les boissons et plats servis au Plunk, avec leurs prix.</div>
+          </span>
+        </a>
+
+        <a href="effectif.html" class="accueil-carte">
+          <span class="carte-icone"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span>
+          <span>
+            <div class="carte-titre">Personnel</div>
+            <div class="carte-texte">L'équipe du Plunk.</div>
+          </span>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="holo-section">
+      <h2>Informations</h2>
+      <div class="holo-grid">
+
+        <div class="holo-card">
+          <span class="carte-icone"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <span>
+            <div class="label">Lieu</div>
+            <div class="value">Rishi</div>
+          </span>
+        </div>
+
+        <div class="holo-card">
+          <span class="carte-icone"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4 M12 18v4 M2 12h4 M18 12h4"/></svg></span>
+          <span>
+            <div class="label">Statut</div>
+            <div class="value">Neutre</div>
+          </span>
+        </div>
+
+        <div class="holo-card">
+          <span class="carte-icone"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6 M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span>
+          <span>
+            <div class="label">Crédits acceptés</div>
+            <div class="value">Tous</div>
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="holo-status">
+      <span><span class="blink">●</span> Connexion stable</span>
+      <span id="horloge">--:--:--</span>
+      <span>Le Plunk — Rishi</span>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('boot-screen').style.display = 'none';
+    }, 700);
+
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('horloge').textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
